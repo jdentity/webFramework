@@ -1,0 +1,23 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p> ex 7-5 특정 Element 찾기</p>
+        <script language="JavaScript">
+            var xmldoc = new ActiveXObject("MSXML.DOMDocument")
+            xmldoc.async = false;
+            xmldoc.load("names2.xml");
+        
+            var node = xmldoc.getElementsByTagName('last');
+            alert("getElementsByTagName");
+            for(var i = 0; i < node.length; i++)
+                alert(node[i].firstChild.nodeValue);
+        
+            alert("selectNodes");
+            var node = xmldoc.selectNodes("/simple/name/last");
+            for(var i = 0; i<node.length; i++)
+                alert(node[i].firstChild.nodeValue);
+            
+        </script>
+    </body>
+</html>

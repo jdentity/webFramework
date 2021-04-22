@@ -1,0 +1,17 @@
+0. document                                 //DOMDocument xmldoc
+    1. Element("order")                     //xmldoc.documentElement
+        2. Attribute("number")              //xmldoc.documentElement.attributes[0]
+            3. Text("3123")                 //xmldoc.documentElement.attributes[0].firstChild
+        2. Element("date")                  //xmldoc.documentElement.firstChild
+            3. Text("2002/1/1")             //xmldoc.documentElement.firstChild.firstChild
+        2. Element("customer")              //xmldoc.documentElement.childNodes[1]
+            3. Attribute("id")              //xmldoc.documentElement.childNodes[1].attributes[0]
+                4. Text("216A")             //xmldoc.documentElement.childNodes[1].attributes[0].firstChild
+            3. Text("Company A")            //xmldoc.documentElement.childNodes[1].firstChild
+        2. Element("item")                  //xmldoc.documentElement.childNodes[2]
+            3. Element("part-number")       //xmldoc.documentElement.childNodes[2].firstChild
+                4. Attribute("warehouse")   //xmldoc.documentElement.childNodes[2].firstChild.attributes[0]
+                    5. Text("warehouse 11") //xmldoc.documentElement.childNodes[2].firstChild.attributes[0].firstChild
+                4. Text("E16-25A")          //xmldoc.documentElement.childNodes[2].firstChild.firstChild
+            3. Element("quantity")          //xmldoc.documentElement.childNodes[2].childNodes[1]
+                4. Text("16")               //xmldoc.documentElement.childNodes[2].childNode[1].firstNode

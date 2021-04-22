@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE BookCatalog 
+[<!ELEMENT BookCatalog  (Book)*>
+<!ELEMENT Book          ((Title|BookCode), CoAuthor, Year, Summary)>
+<!--ATTLIST Book lang CDATA "kor"-->
+<!--ATTLIST Book lang CDATA #FIXED "eng"-->
+<!--ATTLIST Book lang CDATA #IMPLIED-->
+<!ATTLIST Book lang CDATA #REQUIRED>
+<!ELEMENT Title         (#PCDATA)>
+<!ELEMENT BookCode      (#PCDATA)>
+<!ELEMENT CoAuthor      (#PCDATA|Author)*>
+<!ELEMENT Author        (#PCDATA)>
+<!ELEMENT Year          (#PCDATA)>
+<!ELEMENT Summary ANY>
+]>
+<BookCatalog>
+    <Book lang>
+        <!--BookCode>ABC-1</BookCode-->
+        <Title>new ideas from dead economists</Title>
+        <CoAuthor>
+            <Author>Todd G. Buchholz</Author>
+            류현
+        </CoAuthor>
+        <Year>2007</Year>
+        <Summary> 현대 경제사상의 이해를 위한 입문서 </Summary>
+    </Book>
+    <Book lang="eng">
+        <BookCode>ABC-2</BookCode>
+        <!--Title>Pensées</Title-->
+        <CoAuthor> 
+            <Author>Blaise Pascal</Author>
+            A.J 크라일 샤이머
+        </CoAuthor>
+        <Year>1670</Year>
+        <Summary> 기독교의 논리적 철학적 변증서 </Summary>
+    </Book>
+    <Book lang="eng">
+        <BookCode>ABC-3</BookCode>
+        <!--Title>Zero to One</Title-->
+        <CoAuthor>
+            blake masters
+            <Author>Peter Thiel</Author>
+        </CoAuthor>
+        <Year>2014</Year>
+        <Summary> 스탠퍼드 대학교 스타트업 최고 명강의 </Summary>
+    </Book>
+    <Book lang="eng">
+        <!--BookCode>ABC-4</BookCode-->
+        <Title>Gang Leader for a Day</Title>
+        <CoAuthor>
+            <Author>Sudhir Venkatesh</Author>
+            김영선
+        </CoAuthor>
+        <Year>2008</Year>
+        <Summary> 통계와 연구실을 박차고 거리로 나선 괴짜 사회학자의 세상탐구 </Summary>
+    </Book>
+</BookCatalog>

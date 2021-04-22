@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cs.skuniv.ac.kr/xml/jsw"
+    xmlns:target="http://cs.skuniv.ac.kr/xml/jsw"
+    elementFormDefault="qualified">
+
+    <group name="AlbumGroup">
+        <sequence>
+            <element name="Artist" type="string" />
+            <element name="Title" type="string" />
+            <element name="Genre" type="string" />
+            <element name="Released-date" type="string" />
+            <element name="Song" maxOccurs="unbounded" type="string" />
+        </sequence>
+    </group>
+
+    <complexType name="albumType">
+        <group ref="target:AlbumGroup" />
+    </complexType>
+
+    <element name="AudioCatalog">
+        <complexType>
+            <choice maxOccurs="unbounded">
+                <element name="Cd" type="target:AlbumType" />
+                <element name="Mp3" type="target:AlbumType" />
+                <element name="Record" type="target:AlbumType" />
+            </choice>
+        </complexType>
+    </element>
+</schema>
+
+<!--schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cs.skuniv.ac.kr/xml/jsw"
+    xmlns:target="http://cs.skuniv.ac.kr/xml/jsw"
+    elementFormDefault="qualified">
+
+    <group name="AlbumGroup">
+        <sequence>
+            <element name="Artist" type="string" />
+            <element name="Title" type="string" />
+            <element name="Genre" type="string" />
+            <element name="Released-date" type="string" />
+            <element name="Song" maxOccurs="unbounded" type="string" />
+        </sequence>
+    </group>
+
+    <element name="AudioCatalog">
+        <complexType>
+            <choice maxOccurs="unbounded">
+                <element name="Cd">
+                    <complexType>
+                        <group ref="AlbumGroup">
+                    </complexType>
+                </element>
+                <element name="Mp3">
+                    <complexType>
+                        <group ref="AlbumGroup">
+                    </complexType>
+                </element>
+                <element name="Record">
+                    <complexType>
+                        <group ref="AlbumGroup">
+                    </complexType>
+                </element>
+            </choice>
+        </complexType>
+    </element>
+</schema-->

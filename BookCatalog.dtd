@@ -1,0 +1,12 @@
+<!ELEMENT BookCatalog  (Book)*>
+<!ELEMENT Book          ((Title|BookCode), CoAuthor, Year, Summary)>
+<!--ATTLIST Book lang CDATA "kor"-->
+<!--ATTLIST Book lang CDATA #FIXED "eng"-->
+<!--ATTLIST Book lang CDATA #IMPLIED-->
+<!ATTLIST Book lang CDATA #REQUIRED>
+<!ELEMENT Title         (#PCDATA)>
+<!ELEMENT BookCode      (#PCDATA)>
+<!ELEMENT CoAuthor      (#PCDATA|Author)*>
+<!ELEMENT Author        (#PCDATA)>
+<!ELEMENT Year          (#PCDATA)>
+<!ELEMENT Summary ANY>

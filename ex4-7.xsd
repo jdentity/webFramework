@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cs.skuniv.ac.kr/xml/jsw"
+    xmlns:target="http://cs.skuniv.ac.kr/xml/jsw"
+    elementFormDefault="qualified">
+
+    <group name="playTimeGroup">
+        <sequence>
+            <element name="playTime">
+                <complexType mixed="true">
+                    <sequence>
+                        <element name="hours" type="hourScope"/>
+                        <element name="minutes" type="minuteScope"/>
+                        <element name="seconds" type="secondScope"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </sequence>
+    </group>
+
+    <element name="hourScope">
+        <simpleType>
+            <restriction base="integer">
+                <minInclusive value="0" />
+                <maxExclusive value="10" />
+            </restriction>
+        </simpleType>
+    </element>
+    <element name="minuteScope">
+        <simpleType>
+            <restriction base="integer">
+                <minInclusive value="0" />
+                <maxExclusive value="60" />
+            </restriction>
+        </simpleType>
+    </element>
+    <element name="secondScope">
+        <simpleType>
+            <restriction base="integer">
+                <minInclusive value="0" />
+                <maxExclusive value="60" />
+            </restriction>
+        </simpleType>
+    </element>
+
+    <complexType name="playTimeType">
+        <group ref="target:playTimeGroup" />
+        <attributeGroup ref="target:playTimeAttributes" />
+    </complexType>
+
+    <group name="AlbumGroup">
+        <sequence>
+            <element name="Artist" type="string" />
+            <element name="Title" type="string" />
+            <element name="Genre" type="string" />
+            <element name="Released-date" type="string" />
+            <element name="Song" maxOccurs="unbounded" type="playTimeType" />
+        </sequence>
+    </group>
+
+    <complexType name="AlbumType">
+        <group ref="target:AlbumGroup" />
+    </complexType>
+
+    <element name="AudioCatalog">
+        <complexType>
+            <choice maxOccurs="unbounded">
+                <element name="Cd" type="target:AlbumType" />
+                <element name="Mp3" type="target:AlbumType" />
+                <element name="Record" type="target:AlbumType" />
+            </choice>
+        </complexType>
+    </element>
+</schema>

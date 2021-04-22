@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioCatalog xmlns="http://cs.skuniv.ac.kr/xml/jsw"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://cs.skuniv.ac.kr/xml/jsw AudioCatalog.xsd">
+    <Mp3>
+        <Artist>환불원정대</Artist>
+        <Title>DON'T TOUCH ME</Title>
+        <Genre>Dance</Genre>
+        <Released-date>2020.10.10</Released-date>
+        <Song>DON'T TOUCH ME</Song>
+    </Mp3>
+    <Mp3>
+        <Artist>BTS</Artist>
+        <Title>Dynamite</Title>
+        <Genre>Dance</Genre>
+        <Released-date>2020.09.21</Released-date>
+        <Song>Dynamite</Song>
+    </Mp3>
+    <Cd>
+        <Artist>The Beatles</Artist>
+        <Title>Let It Be</Title>
+        <Genre>Rock</Genre>
+        <Released-date>1970.05.08</Released-date>
+        <Song>Two Of Us</Song>
+        <Song>Let It Be</Song>
+    </Cd>
+    <Record>
+        <Artist>Michael Jackson</Artist>
+        <Title>Thriller</Title>
+        <Genre>Pop</Genre>
+        <Released-date>1982.11.30</Released-date>
+        <Song>thriller</Song>
+        <Song>billie jean</Song>
+        <Song>beat it</Song>
+    </Record>
+</AudioCatalog>

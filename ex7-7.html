@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <!--simple>
+            <name> 김기수 </name>
+            <name> 홍길동 </name>
+            <name> 신현아 </name>
+            <name> 장나라 </name>
+        </simple-->
+        <script language="JavaScript">
+            xmldoc = new ActiveXObject("Msxml2.DOMDocument");
+
+            var simple = xmldoc.createElement("simple");
+
+            var name1 = xmldoc.createElement("name");
+            simple.appendChild(name1);
+            var text1 = xmldoc.createTextNode("김기수");
+            name1.appendChild(text1);
+
+            var name2 = xmldoc.createElement("name");
+            simple.appendChild(name2);
+            var text2 = xmldoc.createTextNode("홍길동");
+            name2.appendChild(text2);
+
+            var name3 = xmldoc.createElement("name");
+            simple.appendChild(name3);
+            var text3 = xmldoc.createTextNode("신현아");
+            name3.appendChild(text3);
+
+            var name4 = xmldoc.createElement("name");
+            simple.appendChild(name4);
+            var text4 = xmldoc.createTextNode("장나라");
+            name4.appendChild(text4);
+
+            xmldoc.documentElement = simple;
+            alert(xmldoc.xml);
+
+            xmldoc.save("names5.xml");
+        </script>
+    </body>
+</html>

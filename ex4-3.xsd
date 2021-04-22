@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cs.skuniv.ac.kr/xml/jsw"
+    xmlns:target="http://cs.skuniv.ac.kr/xml/jsw"
+    elementFormDefault="qualified">
+    
+    <element name="Title" type="string"/>
+    <element name="Author" type="string"/>
+    <element name="Year" type="string"/>
+    
+    <complexType name="BookType">
+        <sequence>
+            <element ref="target:Title" />
+            <element ref="target:Author" />
+            <element ref="target:Year" />
+        </sequence>
+    </complexType>
+
+    <element name="Book" type="target:BookType" />
+
+    <complexType name="BookCatalogType">
+        <sequence>
+            <element ref="target:Book" maxOccurs="unbounded" />
+        </sequence>
+    </complexType>
+
+    <element name="BookCatalog" type="target:BookCatalogType" />
+</schema>

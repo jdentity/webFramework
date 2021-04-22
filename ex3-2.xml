@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE BookCatalog
+[<!ELEMENT BookCatalog  (Book)*>
+<!ELEMENT Book          (Title, Author, Year)>
+<!ELEMENT Title         (#PCDATA)>
+<!ELEMENT Author        (#PCDATA)>
+<!ELEMENT Year          (#PCDATA)>
+]>
+<BookCatalog>
+    <Book>
+        <Title>new ideas from dead economists</Title>
+        <Author>Todd G. Buchholz</Author>
+        <Year>2007</Year>
+    </Book>
+    <Book>
+        <Title>Pensées</Title>
+        <Author>Blaise Pascal</Author>
+        <Year>1670</Year>
+    </Book>
+    <Book>
+        <Title>Zero to One</Title>
+        <Author>Peter Thiel</Author>
+        <Year>2014</Year>
+    </Book>
+    <Book>
+        <Title>Gang Leader for a Day</Title>
+        <Author>Sudhir Venkatesh</Author>
+        <Year>2008</Year>
+    </Book>
+</BookCatalog>

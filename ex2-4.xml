@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE BookCatalog
+[<!ELEMENT BookCatalog  (Book)*>
+<!ELEMENT Book          (Title, Author, Year)>
+<!ELEMENT Title         (#PCDATA)>
+<!ELEMENT Author        (#PCDATA)>
+<!ELEMENT Year          (#PCDATA)>
+]>
+<my:BookCatalog xmlns:my="http:cswin.skuniv.ac.kr">
+    <my:Book>
+        <my:Title>new ideas from dead economists</my:Title>
+        <my:Author>Todd G. Buchholz</my:Author>
+        <my:Year>2007</my:Year>
+    </my:Book>
+    <my:Book>
+        <my:Title>Pensées</my:Title>
+        <my:Author>Blaise Pascal</my:Author>
+        <my:Year>1670</my:Year>
+    </my:Book>
+    <my:Book>
+        <my:Title>Zero to One</my:Title>
+        <my:Author>Peter Thiel</my:Author>
+        <my:Year>2014</my:Year>
+    </my:Book>
+    <my:Book>
+        <my:Title>Gang Leader for a Day</my:Title>
+        <my:Author>Sudhir Venkatesh</my:Author>
+        <my:Year>2008</my:Year>
+    </my:Book>
+</my:BookCatalog>

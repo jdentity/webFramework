@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://cs.skuniv.ac.kr/xml/jsw"
+    xmlns:target="http://cs.skuniv.ac.kr/xml/jsw"
+    elementFormDefault="qualified">
+
+    <simpleType name="CategoryRestriction">
+        <restriction base="string">
+            <enumeration value="AutoVehicles" />
+            <enumeration value="Comedy" />
+            <enumeration value="Education" />
+            <enumeration value="Entertainment" />
+            <enumeration value="Film" />
+            <enumeration value="Gaming" />
+            <enumeration value="HowtoStyle" />
+            <enumeration value="Music" />
+            <enumeration value="NewsPolitics" />
+            <enumeration value="NonprofitActivism" />
+            <enumeration value="PeopleBlogs" />
+            <enumeration value="PetsAnimal" />
+            <enumeration value="ScienceTechnology" />
+            <enumeration value="Shows" />
+            <enumeration value="Sports" />
+            <enumeration value="Travel" />
+            <enumeration value="Fashion" />
+            <enumeration value="Etc" />
+        </restriction>
+    </simpleType>
+
+    <group name="EarningGroup" >
+        <sequence>
+            <element name="min" type="string" />
+            <element name="max" type="string" />
+        </sequence>
+    </group>
+
+    <attributeGroup name="EarningAttribute">
+        <attribute name="period" type="string" />
+        <attribute name="currency" type="string" />
+    </attributeGroup>
+
+    <complexType name="EarningType">
+        <group ref="target:EarningGroup" />
+        <attributeGroup ref="target:EarningAttribute"/>
+    </complexType>
+
+    <group name="VideoGroup">
+        <sequence>
+            <element name="title" type="string" />
+            <element name="uploadDate" type="date" />
+            <element name="views" type="string" />
+            <element name="likes" type="string" />
+            <element name="unlikes" type="string" />
+            <element name="comments" type="string" />
+            <element name="link" type="anyURI" /> 
+        </sequence>
+    </group>
+
+    <complexType name="VideoType">
+        <group ref="target:VideoGroup" />
+    </complexType>
+
+    <group name="ChannelGroup">
+        <sequence>
+            <element name="Name" type="string" />
+            <element name="Rank" type="positiveInteger" />
+            <element name="Category" maxOccurs="3" type="target:CategoryRestriction" />
+            <element name="SignUpDate" type="date" />
+            <element name="Subscribers" type="string" />
+            <element name="TotalViews" type="string" />
+            <element name="AverageViews" type="string" />
+            <element name="Videos" type="string" />
+            <element name="PotentialEarnings" type="target:EarningType"/>
+            <element name="BestVideo" maxOccurs="1" type="target:VideoType" />
+        </sequence>
+    </group>
+
+    <attributeGroup name="ChannelAttribute">
+        <attribute name="area" type="string" use="required"/>
+        <attribute name="language" type="string" default="English"/>
+    </attributeGroup>
+
+    <complexType name="ChannelType">
+        <group ref="target:ChannelGroup" />
+        <attributeGroup ref="target:ChannelAttribute" />
+    </complexType>
+
+    <element name="Youtube">
+        <complexType>
+            <choice maxOccurs="unbounded">
+                <element name="Channel" type="target:ChannelType" />
+            </choice>
+        </complexType>
+    </element>
+</schema>
